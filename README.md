@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RPG - DRAGON REPELLER SPEEDRUN
 
-## Getting Started
+A text-based RPG where your objective is to kill the Dragon in order to beat the game.
 
-First, run the development server:
+Originally by [freeCodeCamp](https://www.freecodecamp.org/) - JavaScript tutorial course.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This version has been modified and allows a speedrun mode.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Skip to [How To Play](#how-to-play) here.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## STATS
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**PLAYER INITIAL STATS**
 
-## Learn More
+- xp: 0
+- health: 100
+- gold: 50
+- weapon: stick
 
-To learn more about Next.js, take a look at the following resources:
+**WEAPON STATS**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **stick** - power: 5 , cost: free
+- **dagger** - power: 30, cost: 30 gold
+- **claw hammer** - power: 50, cost: 40 gold
+- **sword** - power: 100, cost: 50 gold
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**MONSTER STATS**
 
-## Deploy on Vercel
+- **slime** - level: 2, health: 15
+- **fanged beast** - level: 8, health: 60
+- **dragon** - level: 20, health: 300
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## CHANGES FROM THE ORIGINAL
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **WEAPON BREAKING**
+
+  Removed.
+
+- **SELLING WEAPON**
+
+  Removed.
+
+- **DODGE MECHANIC**
+
+  Now has a chance to recover Health, reduce incoming damage, or simply evade the next attack. Is not particularly useful and only meant to waste time.
+
+- **RUNNING AWAY**
+
+  Will lose 15 gold. This is to compensate for the removal of weapon breaking mechanic.
+
+- **TIMER**
+
+  Can opt into timed mode, for speedruns.
+
+- **MAX STATS**
+
+  XP is now maxed at 80, Health is now maxed at 300
+
+### _Don't like these changes? Here's the code for the original version_ [RPG- Dragon Repeller](https://hentaihaven.xxx/)
+
+## <span id="how-to-play">HOW TO PLAY</span>
+
+Click buttons
+
+## USEFUL TOOLS
+
+[Stopwatch tutorial](https://medium.com/how-to-react/simple-way-to-create-a-stopwatch-in-react-js-bcc0e08e041e) - by Manish Mandal
