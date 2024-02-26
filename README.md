@@ -56,11 +56,21 @@ Skip to [How To Play](#how-to-play) here.
 
   XP is now maxed at 80, Health is now maxed at 300
 
-### _Don't like these changes? Here's the code for the original version_ [RPG- Dragon Repeller](https://hentaihaven.xxx/)
+- **WEAPON PRICE ADJUSTED**
+
+  Compensation for how good the Easter Egg mechanic is.
+
+### _Don't like these changes? Check out the original version in [freeCodeCamp](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)_
 
 ## <span id="how-to-play">HOW TO PLAY</span>
 
-Click buttons
+_Click buttons_
+
+Fight monsters to earn gold that is used for weapon upgrades as well as to increase your health in order to defeat the Dragon.
+
+After combat, get the chance to discover an easter egg that will help you earn gold or lose some health.
+
+Your damage scales, not just with your weapon, but your xp as well.
 
 ## USEFUL TOOLS
 
