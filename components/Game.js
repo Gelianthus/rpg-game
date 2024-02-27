@@ -145,7 +145,7 @@ export default function NormalMode() {
 					</strong>
 				</span>
 			</div>
-			<p className="p-4 bg-neutral-200 border-gray-500 border-2 my-2 h-64 xs:h-56 sm:h-40">
+			<p className="p-4 bg-neutral-200 border-gray-500 border-2 my-2 h-64 sm:h-48">
 				{text}
 			</p>
 			<button
