@@ -1,14 +1,10 @@
 "use client";
 
-import { weapons, monsters, locations, initialText } from "@/utils/game-data";
-import {
-	isMonsterHit,
-	getMonsterAttackValue,
-	getNumbers,
-} from "@/utils/game-mechanics";
-import { useEffect } from "react";
+import { weapons, monsters, locations } from "@/utils/game-data";
+import { getMonsterAttackValue, getNumbers } from "@/utils/game-mechanics";
 
 export default function ButtonCenter({
+	fightMonsterHandle,
 	withTimer,
 	setTimeRunning,
 	currentLocation,
@@ -23,9 +19,6 @@ export default function ButtonCenter({
 	inventory,
 	setInventory,
 	fighting,
-	setFighting,
-	setMonsterHealth,
-	text,
 	setText,
 	gameLog,
 	setGameLog,
@@ -61,10 +54,7 @@ export default function ButtonCenter({
 					}
 				} else if (currentLocation === 2) {
 					// fight fanged beast
-					setCurrentLocation(3);
-					setFighting(1);
-					setMonsterHealth(monsters[1]?.health);
-					setText(`You've engaged a ${monsters[1]?.name} into combat.`);
+					fightMonsterHandle(1);
 				} else if (currentLocation === 3) {
 					// dodge
 					if (Math.random() < 0.2) {

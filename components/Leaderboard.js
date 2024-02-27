@@ -10,7 +10,7 @@ export default function Leaderboard() {
 	}, []);
 
 	return (
-		<div className="max-w-xs bg-gray-800 text-neutral-50 p-4 mx-auto ">
+		<div className="max-w-xs bg-gray-800 text-neutral-50 p-4 mx-auto sm:h-96">
 			<p className="font-semibold text-center text-emerald-500">
 				TOP TEN LEADERBOARD
 			</p>

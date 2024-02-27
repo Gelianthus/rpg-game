@@ -1,5 +1,5 @@
 "use client";
-import { weapons, monsters, locations, initialText } from "@/utils/game-data";
+import { monsters, initialText } from "@/utils/game-data";
 import { useState, useEffect } from "react";
 import ButtonLeft from "./game-buttons/ButtonLeft";
 import ButtonCenter from "./game-buttons/ButtonCenter";
@@ -48,28 +48,33 @@ export default function NormalMode() {
 		setTimeRunning(false);
 	};
 
+	const fightMonsterHandle = (monsterIndex) => {
+		setCurrentLocation(3);
+		setFighting(monsterIndex);
+		setMonsterHealth(monsters[monsterIndex]?.health);
+		setText(
+			`You've engaged ${monsterIndex === 2 ? "the" : "a"} ${
+				monsters[monsterIndex]?.name
+			} into combat.`
+		);
+	};
+
 	return (
-		<div className="p-2 xs:p-8 sm:py-8 sm:px-16 sm:max-w-2xl mx-auto ">
-			<div className="flex flex-row gap-4 flex-wrap">
+		<div className="py-2 xs:p-4 sm:py-8 sm:px-16 sm:max-w-2xl mx-auto ">
+			<div className="flex flex-row gap-4  text-xs xs:text-sm sm:text-base">
 				<span className="font-semibold text-purple-800">
-					XP:{" "}
-					<span className="text-gray-950">
-						{xp}
-						{xp > 79 && " (max)"}
-					</span>
+					XP: <span className="text-gray-950">{xp}</span>
 				</span>
 				<span className="font-semibold text-green-600">
-					Health:{" "}
-					<span className="text-gray-950">
-						{health} {health > 299 && " (max)"}
-					</span>
+					Health: <span className="text-gray-950">{health}</span>
 				</span>
-				<span className="font-semibold text-amber-600">
+				<span className="font-semibold text-yellow-500">
 					Gold: <span className="text-gray-950">{gold}</span>
 				</span>
 			</div>
 			<div className="flex flex-col sm:flex-row gap-1 flex-wrap my-2 text-sm">
 				<ButtonLeft
+					fightMonsterHandle={fightMonsterHandle}
 					withTimer={withTimer}
 					setSubmitVisible={setSubmitVisible}
 					setTimeRunning={setTimeRunning}
@@ -83,16 +88,15 @@ export default function NormalMode() {
 					setGold={setGold}
 					currentWeapon={currentWeapon}
 					fighting={fighting}
-					setFighting={setFighting}
 					monsterHealth={monsterHealth}
 					setMonsterHealth={setMonsterHealth}
-					text={text}
 					setText={setText}
 					gameLog={gameLog}
 					setGameLog={setGameLog}
 					restartHandle={restartHandle}
 				/>
 				<ButtonCenter
+					fightMonsterHandle={fightMonsterHandle}
 					withTimer={withTimer}
 					setTimeRunning={setTimeRunning}
 					currentLocation={currentLocation}
@@ -107,43 +111,43 @@ export default function NormalMode() {
 					inventory={inventory}
 					setInventory={setInventory}
 					fighting={fighting}
-					setFighting={setFighting}
-					setMonsterHealth={setMonsterHealth}
-					text={text}
 					setText={setText}
 					gameLog={gameLog}
 					setGameLog={setGameLog}
 					restartHandle={restartHandle}
 				/>
 				<ButtonRight
+					fightMonsterHandle={fightMonsterHandle}
 					withTimer={withTimer}
 					setTimeRunning={setTimeRunning}
 					currentLocation={currentLocation}
 					setCurrentLocation={setCurrentLocation}
 					gold={gold}
 					setGold={setGold}
-					setFighting={setFighting}
-					setMonsterHealth={setMonsterHealth}
-					text={text}
 					setText={setText}
 					gameLog={gameLog}
 					setGameLog={setGameLog}
 					restartHandle={restartHandle}
 				/>
 			</div>
-			<div
-				className={`${
-					currentLocation === 3 ? "block" : "hidden"
-				} flex flex-row gap-2 flex-wrap my-2`}
-			>
-				<span className="font-semibold">
-					Monster Name: <span>{monsters[fighting]?.name}</span>
+			<div className={` flex flex-row gap-2 flex-wrap my-2`}>
+				<span>
+					Currently Fighting:{" "}
+					<strong>
+						<span>{monsters[fighting]?.name && "none"}</span>
+					</strong>
 				</span>
-				<span className="font-semibold">
-					Health: <span>{monsterHealth}</span>
+
+				<span>
+					Monster Health:{" "}
+					<strong>
+						<span>{monsterHealth <= 0 ? "" : monsterHealth}</span>
+					</strong>
 				</span>
 			</div>
-			<p className="p-4 bg-neutral-200 border-gray-500 border-2 my-2">{text}</p>
+			<p className="p-4 bg-neutral-200 border-gray-500 border-2 my-2 h-64 xs:h-56 sm:h-40">
+				{text}
+			</p>
 			<button
 				disabled={timeRunning === true}
 				className={`${

@@ -1,6 +1,6 @@
 "use client";
 
-import { weapons, monsters, locations, initialText } from "@/utils/game-data";
+import { weapons, monsters, locations } from "@/utils/game-data";
 import {
 	isMonsterHit,
 	getMonsterAttackValue,
@@ -8,6 +8,7 @@ import {
 } from "@/utils/game-mechanics";
 
 export default function ButtonLeft({
+	fightMonsterHandle,
 	withTimer,
 	setSubmitVisible,
 	setTimeRunning,
@@ -21,10 +22,8 @@ export default function ButtonLeft({
 	setGold,
 	currentWeapon,
 	fighting,
-	setFighting,
 	monsterHealth,
 	setMonsterHealth,
-	text,
 	setText,
 	gameLog,
 	setGameLog,
@@ -60,10 +59,7 @@ export default function ButtonLeft({
 					}
 				} else if (currentLocation === 2) {
 					// fight slime
-					setCurrentLocation(3);
-					setFighting(0);
-					setMonsterHealth(monsters[0]?.health);
-					setText(`You've engaged a ${monsters[0]?.name} into combat.`);
+					fightMonsterHandle(0);
 				} else if (currentLocation === 3) {
 					// attack
 					let damage = 0;
