@@ -10,6 +10,7 @@ export default function ButtonRight({
 	setCurrentLocation,
 	gold,
 	setGold,
+	setFighting,
 	setText,
 	gameLog,
 	setGameLog,
@@ -37,6 +38,7 @@ export default function ButtonRight({
 				} else if (currentLocation === 3) {
 					// run
 					setCurrentLocation(0);
+					setFighting(null);
 					setText(
 						"You've managed to run away from the monster but loss some gold on the way out."
 					);

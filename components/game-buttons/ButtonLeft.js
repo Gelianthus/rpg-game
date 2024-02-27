@@ -14,6 +14,7 @@ export default function ButtonLeft({
 	setTimeRunning,
 	currentLocation,
 	setCurrentLocation,
+	setFighting,
 	xp,
 	setXp,
 	health,
@@ -84,11 +85,13 @@ export default function ButtonLeft({
 					if (damage >= monsterHealth) {
 						if (fighting === 2) {
 							setCurrentLocation(6);
+							setFighting(null);
 							setText("You defeated the dragon! YOU WIN THE GAME!");
 							setSubmitVisible(true);
 							setTimeRunning(false);
 						} else {
 							setCurrentLocation(4);
+							setFighting(null);
 							setGold(gold + Math.floor(monsters[fighting]?.level * 6.7));
 							if (xp + monsters[fighting]?.level < 81) {
 								setXp(xp + monsters[fighting]?.level);

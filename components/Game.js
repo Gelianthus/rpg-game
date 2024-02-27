@@ -80,6 +80,7 @@ export default function NormalMode() {
 					setTimeRunning={setTimeRunning}
 					currentLocation={currentLocation}
 					setCurrentLocation={setCurrentLocation}
+					setFighting={setFighting}
 					xp={xp}
 					setXp={setXp}
 					health={health}
@@ -124,6 +125,7 @@ export default function NormalMode() {
 					setCurrentLocation={setCurrentLocation}
 					gold={gold}
 					setGold={setGold}
+					setFighting={setFighting}
 					setText={setText}
 					gameLog={gameLog}
 					setGameLog={setGameLog}
