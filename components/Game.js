@@ -134,7 +134,7 @@ export default function NormalMode() {
 				<span>
 					Currently Fighting:{" "}
 					<strong>
-						<span>{monsters[fighting]?.name && "none"}</span>
+						<span>{monsters[fighting]?.name || "none"}</span>
 					</strong>
 				</span>
 
