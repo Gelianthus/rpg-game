@@ -20,8 +20,6 @@ export default function ButtonCenter({
 	setInventory,
 	fighting,
 	setText,
-	gameLog,
-	setGameLog,
 	restartHandle,
 }) {
 	return (

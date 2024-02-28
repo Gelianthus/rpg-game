@@ -60,7 +60,7 @@ Skip to [How To Play](#how-to-play) here.
 
   Compensation for how good the Easter Egg mechanic is.
 
-### _Don't like these changes? Check out the original version in [freeCodeCamp](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)_
+### _Don't like these changes? The original is also available to play. Link is in the description in the homepage._
 
 ## <span id="how-to-play">HOW TO PLAY</span>
 

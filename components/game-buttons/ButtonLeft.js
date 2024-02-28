@@ -26,8 +26,6 @@ export default function ButtonLeft({
 	monsterHealth,
 	setMonsterHealth,
 	setText,
-	gameLog,
-	setGameLog,
 	restartHandle,
 }) {
 	return (

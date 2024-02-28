@@ -21,7 +21,15 @@ export default function Home() {
 						>
 							freeCodeCamp
 						</Link>{" "}
-						JavaScript Tutorial with an added Speedrun mode.
+						JavaScript Tutorial with an added Speedrun mode. <br /> Play the
+						orignial{" "}
+						<Link
+							className="underline"
+							href={"/original-version"}
+						>
+							here
+						</Link>
+						.
 					</p>
 					<div className="font-bold text-xs text-gray-500 my-4 text-center">
 						<p>

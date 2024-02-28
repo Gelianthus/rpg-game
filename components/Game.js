@@ -1,4 +1,5 @@
 "use client";
+
 import { monsters, initialText } from "@/utils/game-data";
 import { useState, useEffect } from "react";
 import ButtonLeft from "./game-buttons/ButtonLeft";
@@ -7,7 +8,7 @@ import ButtonRight from "./game-buttons/ButtonRight";
 import StopWatch from "./StopWatch";
 import SubmitRecord from "./SubmitRecord";
 
-export default function NormalMode() {
+export default function Game() {
 	const [withTimer, setWithTimer] = useState(false);
 	const [timeRunning, setTimeRunning] = useState(false);
 	const [time, setTime] = useState(0);
@@ -22,7 +23,6 @@ export default function NormalMode() {
 	const [fighting, setFighting] = useState(null);
 	const [monsterHealth, setMonsterHealth] = useState(null);
 	const [text, setText] = useState(initialText);
-	const [gameLog, setGameLog] = useState([]);
 
 	useEffect(() => {
 		if (health <= 0) {
@@ -43,7 +43,6 @@ export default function NormalMode() {
 		setFighting(null);
 		setMonsterHealth(null);
 		setText(initialText);
-		setGameLog([]);
 		setTime(0);
 		setTimeRunning(false);
 	};
@@ -92,8 +91,6 @@ export default function NormalMode() {
 					monsterHealth={monsterHealth}
 					setMonsterHealth={setMonsterHealth}
 					setText={setText}
-					gameLog={gameLog}
-					setGameLog={setGameLog}
 					restartHandle={restartHandle}
 				/>
 				<ButtonCenter
@@ -113,8 +110,6 @@ export default function NormalMode() {
 					setInventory={setInventory}
 					fighting={fighting}
 					setText={setText}
-					gameLog={gameLog}
-					setGameLog={setGameLog}
 					restartHandle={restartHandle}
 				/>
 				<ButtonRight
@@ -127,8 +122,6 @@ export default function NormalMode() {
 					setGold={setGold}
 					setFighting={setFighting}
 					setText={setText}
-					gameLog={gameLog}
-					setGameLog={setGameLog}
 					restartHandle={restartHandle}
 				/>
 			</div>

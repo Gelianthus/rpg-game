@@ -12,8 +12,6 @@ export default function ButtonRight({
 	setGold,
 	setFighting,
 	setText,
-	gameLog,
-	setGameLog,
 	restartHandle,
 }) {
 	const goToTownSquare = () => {
