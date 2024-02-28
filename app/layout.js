@@ -11,6 +11,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
+			<head>
+				<link
+					rel="icon"
+					href="/images/Gelianthus-logo.webp"
+					sizes="any"
+				/>
+			</head>
+
 			<body className={`${inter.className} box-border`}>{children}</body>
 		</html>
 	);
